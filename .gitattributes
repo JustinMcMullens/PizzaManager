@@ -1,0 +1,32 @@
+# See https://git-scm.com/docs/gitattributes for more about git attribute files.
+
+# Mark the database schema as having been generated.
+db/schema.rb linguist-generated
+
+# Mark any vendored files as having been vendored.
+vendor/* linguist-vendored
+config/credentials/*.yml.enc diff=rails_credentials
+config/credentials.yml.enc diff=rails_credentials
+
+# Enforce Unix-style (LF) line endings for common text-based files
+*.rb text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.erb text eol=lf
+
+# Use Windows-style (CRLF) line endings for batch scripts
+*.bat text eol=crlf
+
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Ensure that binary files are not modified
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary

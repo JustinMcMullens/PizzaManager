@@ -1,0 +1,43 @@
+<%= form_with(model: pizza, class: "contents") do |form| %>
+  <% if pizza.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(pizza.errors.count, "error") %> prohibited this pizza from being saved:</h2>
+
+      <ul>
+        <% pizza.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="mt-4">
+    <h3 class="font-medium text-lg">Select Toppings:</h3>
+    <!-- Hidden field to ensure no `true` values are submitted for unchecked boxes -->
+    <%= hidden_field_tag "pizza[topping_ids][]", nil %>
+
+    <% @toppings.each do |topping| %>
+      <div class="mb-2">
+        <!-- Explicitly set the checkbox value to be the topping's ID -->
+        <%= check_box_tag "pizza[topping_ids][]", topping.id, @pizza.topping_ids.include?(topping.id), class: "mr-2" %>
+        <%= label_tag "pizza_topping_#{topping.id}", topping.name, class: "ml-2" %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

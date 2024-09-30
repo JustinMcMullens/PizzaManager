@@ -1,0 +1,19 @@
+<div id="<%= dom_id pizza %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= pizza.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= pizza.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Toppings:</strong>
+  </p>
+  <% pizza.toppings.each do |topping| %>
+    <li><%= topping.name %></li>
+  <% end %>
+  
+</div>
