@@ -1,16 +1,23 @@
+
+
 default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: 094e054b3e434533aeebd799b9a5580c
+  host: localhost
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: pizza_manager_development
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: pizza_manager_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: pizza_manager_production
+  username: postgres
+  password: <%= ENV['094e054b3e434533aeebd799b9a5580c'] %>

@@ -11,9 +11,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_09_30_031441) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "pizza_toppings", force: :cascade do |t|
-    t.integer "pizza_id", null: false
-    t.integer "topping_id", null: false
+    t.bigint "pizza_id", null: false
+    t.bigint "topping_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pizza_id"], name: "index_pizza_toppings_on_pizza_id"
