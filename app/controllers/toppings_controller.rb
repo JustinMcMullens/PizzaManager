@@ -25,7 +25,7 @@ class ToppingsController < ApplicationController
 
     respond_to do |format|
       if @topping.save
-        format.html { redirect_to @topping, notice: "Topping was successfully created." }
+        format.html { redirect_to @topping, notice: "Topping was colldasfas created." }
         format.json { render :show, status: :created, location: @topping }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -64,12 +64,10 @@ class ToppingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_topping
       @topping = Topping.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def topping_params
       params.require(:topping).permit(:name)
     end

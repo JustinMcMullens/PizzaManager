@@ -4,19 +4,6 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <% if flash[:alert] %>
-      <div class="py-3 px-5 bg-red-100 text-red-800 rounded-lg mb-4">
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
-
-    <% if flash[:notice] %>
-      <div class="py-3 px-5 bg-green-100 text-green-800 rounded-lg mb-4">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-
-
     <%= render @topping %>
 
     <%= link_to "Edit this topping", edit_topping_path(@topping), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

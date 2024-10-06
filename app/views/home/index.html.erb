@@ -1,0 +1,20 @@
+<div class="flex items-center justify-center min-h-screen">
+  <div class="text-center">
+    <h2 class="font-extrabold text-4xl text-gray-800 mb-8">Welcome to the Pizza Manager</h2>
+    <p class="text-lg text-gray-700 mb-12">What would you like to see?</p>
+
+    <div class="space-y-8">
+      <div class="flex flex-col items-center">
+        <h1 class="font-extrabold text-5xl text-gray-800 tracking-tight mb-4">Pizzas</h1>
+        <%= link_to "Pizzas", pizzas_path, class: "inline-block bg-blue-600 text-white py-3 px-6 rounded-full font-medium shadow-lg hover:bg-blue-700 focus:outline-none transition duration-200" %>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <h1 class="font-extrabold text-5xl text-gray-800 tracking-tight mb-4">Toppings</h1>
+        <%= link_to "Toppings", toppings_path, class: "inline-block bg-blue-600 text-white py-3 px-6 rounded-full font-medium shadow-lg hover:bg-blue-700 focus:outline-none transition duration-200" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -23,12 +23,10 @@
 
   <div class="mt-4">
     <h3 class="font-medium text-lg">Select Toppings:</h3>
-    <!-- Hidden field to ensure no `true` values are submitted for unchecked boxes -->
     <%= hidden_field_tag "pizza[topping_ids][]", nil %>
 
     <% @toppings.each do |topping| %>
       <div class="mb-2">
-        <!-- Explicitly set the checkbox value to be the topping's ID -->
         <%= check_box_tag "pizza[topping_ids][]", topping.id, @pizza.topping_ids.include?(topping.id), class: "mr-2" %>
         <%= label_tag "pizza_topping_#{topping.id}", topping.name, class: "ml-2" %>
       </div>
